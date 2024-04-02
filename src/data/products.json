@@ -1,0 +1,65 @@
+[
+  {
+    "id": "iphone1",
+    "category": "Apple",
+    "name": "iPhone 13 Pro",
+    "detail": "The latest flagship iPhone with advanced features.",
+    "pictureUrl": "https://media.idownloadblog.com/wp-content/uploads/2021/09/Apple_iPhone-13-Pro_iPhone-13-Pro-Max_09142021-1248x2048.jpg"
+  },
+  {
+    "id": "iphone2",
+    "category": "Apple",
+    "name": "iPhone 13 Pro Max",
+    "detail": "The larger variant of the iPhone 13 Pro with enhanced capabilities.",
+    "pictureUrl": "https://www.mistershopking.com/12470/apple-iphone-13-pro-max-128gb-graphite-italia.jpg"
+  },
+  {
+    "id": "iphone3",
+    "category": "Apple",
+    "name": "iPhone 13 Mini",
+    "detail": "Compact yet powerful iPhone 13 Mini.",
+    "pictureUrl": "https://th.bing.com/th/id/OIP.iR1qSj1ugT2iep_2tbvNjAHaHa?rs=1&pid=ImgDetMain"
+  },
+  {
+    "id": "samsung1",
+    "category": "Samsung",
+    "name": "Samsung Galaxy S21 Ultra",
+    "detail": "Powerful Android smartphone with high-quality camera.",
+    "pictureUrl": "https://th.bing.com/th/id/OIP.eaQwQP34Fnu_mPg6aJ69fgHaJi?rs=1&pid=ImgDetMain"
+  },
+  {
+    "id": "samsung2",
+    "category": "Samsung",
+    "name": "Samsung Galaxy Z Fold 3",
+    "detail": "Foldable smartphone with innovative design.",
+    "pictureUrl": "https://www.megatone.net/images//Articulos/zoom2x/102/MKT1859DIN-1.jpg"
+  },
+  {
+    "id": "samsung3",
+    "category": "Samsung",
+    "name": "Samsung Galaxy Note 20 Ultra",
+    "detail": "Versatile smartphone with S Pen support.",
+    "pictureUrl": "https://www.megatone.net/images//Articulos/zoom2x/209/MKT0406VIS-1.jpg"
+  },
+  {
+    "id": "motorola1",
+    "category": "Motorola",
+    "name": "Motorola Edge 20 Pro",
+    "detail": "Powerful smartphone with high-refresh-rate display.",
+    "pictureUrl": "https://th.bing.com/th/id/OIP.1MBWKEsh_dCz3pmy59fqxgHaHa?rs=1&pid=ImgDetMain"
+  },
+  {
+    "id": "motorola2",
+    "category": "Motorola",
+    "name": "Motorola Edge 20",
+    "detail": "Sleek and stylish mid-range smartphone.",
+    "pictureUrl": "https://th.bing.com/th/id/OIP.YXmRsqLPOPBUxRzUY7429gHaHa?rs=1&pid=ImgDetMain"
+  },
+  {
+    "id": "motorola3",
+    "category": "Motorola",
+    "name": "Motorola Moto G Power (2021)",
+    "detail": "Budget-friendly smartphone with long battery life.",
+    "pictureUrl": "https://th.bing.com/th/id/OIP.DWNznrWsA3Z_M6gH5P7JGAHaHa?rs=1&pid=ImgDetMain"
+  }
+]
