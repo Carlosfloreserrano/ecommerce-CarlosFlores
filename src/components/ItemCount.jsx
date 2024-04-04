@@ -18,6 +18,7 @@ const ItemCount = ({ initial, stock, onAdd }) => {
 
   const handleAddToCart = () => {
     onAdd(count);
+    console.log(`Cantidad agregada al carrito: ${count}`);
   };
 
   return (
@@ -25,7 +26,7 @@ const ItemCount = ({ initial, stock, onAdd }) => {
       <Button variant="outline-secondary" onClick={handleDecrement}>-</Button>
       <span style={{ margin: '0 10px' }}>{count}</span>
       <Button variant="outline-secondary" onClick={handleIncrement}>+</Button>
-      <Button variant="primary" onClick={() => onAdd(handleAddToCart)}>Agregar al carrito</Button>
+      <Button variant="primary" onClick={handleAddToCart}>Agregar al carrito</Button>
     </div>
   );
 };
