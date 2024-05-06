@@ -1,34 +1,38 @@
 import React, { useEffect, useState } from "react";
-
-import Container from "react-bootstrap/Container";
-import { ItemList } from "./ItemList";
 import { useParams } from "react-router-dom";
-
-import data from "../data/products.json";
+import { getFirestore, getDocs, collection } from "firebase/firestore";
+import { ItemList } from "./ItemList";
 
 export const ItemListContainer = () => {
   const [products, setProducts] = useState([]);
-
   const { id } = useParams();
 
   useEffect(() => {
-    const get = new Promise((resolve, reject) => {
-      setTimeout(() => resolve(data), 2000);
-    });
+    const fetchProducts = async () => {
+      const db = getFirestore();
+      const refCollection = collection(db, "items");
+      ("items");
 
-    get.then((data) => {
-      if (!id) {
-        setProducts(data);
-      } else {
-        const filtered = data.filter((p) => p.category === id);
-        setProducts(filtered);
-      }
-    });
+      const snapshot = await getDocs(refCollection);
+
+      const allProducts = snapshot.docs.map((doc) => ({
+        id: doc.id,
+        ...doc.data(),
+      }));
+
+      const filteredProducts = id
+        ? allProducts.filter((product) => product.categoryId === id)
+        : allProducts;
+
+      setProducts(filteredProducts);
+    };
+
+    fetchProducts();
   }, [id]);
 
   return (
-    <Container className="mt-5">
-      <ItemList products={products} />
-    </Container>
+    <div>
+      <ItemList products={products} /> {}
+    </div>
   );
 };

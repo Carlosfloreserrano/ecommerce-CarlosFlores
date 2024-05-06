@@ -1,40 +1,38 @@
-import React, { useEffect, useState } from "react";
-import Container from "react-bootstrap/Container";
-import { useParams } from "react-router-dom";
-import data from "../data/products.json";
-import ItemCount from "./ItemCount"; 
-import "../App.css";
+import React, { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
+import { getFirestore, doc, getDoc } from 'firebase/firestore';
+
+import ItemDetail from './ItemDetail';
 
 export const ItemDetailContainer = () => {
   const [product, setProduct] = useState(null);
-  const [quantity, setQuantity] = useState(1);
-
   const { id } = useParams();
 
   useEffect(() => {
-    const get = new Promise((resolve, reject) => {
-      setTimeout(() => resolve(data), 2000);
-    });
+    const fetchProduct = async () => {
+      const db = getFirestore();
+      const docRef = doc(db, "items", id);
+      const docSnap = await getDoc(docRef);
 
-    get.then((data) => {
-      const filter = data.find((p) => p.id === id);
-      setProduct(filter);
-    });
+      if (docSnap.exists()) {
+        setProduct({ id: docSnap.id, ...docSnap.data() }); 
+      } else {
+        console.error("Product not found"); 
+      }
+    };
+
+    fetchProduct();
   }, [id]);
 
   const handleAddToCart = (qty) => {
-    console.log(`Agregado al carrito: ${product.name} - Cantidad: ${qty}`);
-
+    console.log(`Added to cart: ${product?.title} - Quantity: ${qty}`); 
+   
   };
 
-  if (!product) return <div>Loading</div>;
-
   return (
-    <Container className="mt-5">
-      <h1>{product.name}</h1>
-      <img src={product.pictureUrl} alt={product.name} className="product-image" />
-      <p>{product.detail}</p>
-      <ItemCount initial={1} stock={10} onAdd={handleAddToCart} />
-    </Container>
+    <ItemDetail 
+      product={product} 
+      handleAddToCart={handleAddToCart} 
+    />
   );
 };
